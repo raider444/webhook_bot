@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  webhook_bot:
+    image: webhook_bot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 23456:23456

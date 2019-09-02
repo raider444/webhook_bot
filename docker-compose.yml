@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  webhook_bot:
+    image: webhook_bot
+    build: .
+    ports:
+      - 23456:23456
