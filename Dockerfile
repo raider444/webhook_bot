@@ -8,7 +8,7 @@ FROM python:3.7.3-stretch
 # If you prefer miniconda:
 #FROM continuumio/miniconda3
 
-LABEL Name=webhook_bot Version=0.0.6
+LABEL Name=webhook_bot Version=0.0.7
 
 ARG BOT_TOKEN
 ENV BOT_TOKEN=${BOT_TOKEN}
@@ -28,7 +28,7 @@ ADD . /app
 
 # Using pip:
 RUN python3 -m pip install -r requirements.txt
-CMD ["gunicorn", "webhook_bot:webhookbot"]
+CMD ["gunicorn", "-b", "127.0.0.1:8000", "webhook_bot:webhookbot"]
 
 #RUN apk --update add python py-pip openssl ca-certificates py-openssl wget
 #RUN apk --update add --virtual build-dependencies libffi-dev openssl-dev python-dev py-pip build-base \
