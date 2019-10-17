@@ -8,7 +8,7 @@ FROM python:3.7.3-stretch
 # If you prefer miniconda:
 #FROM continuumio/miniconda3
 
-LABEL Name=webhook_bot Version=0.0.3
+LABEL Name=webhook_bot Version=0.0.4
 
 ARG BOT_TOKEN
 ENV BOT_TOKEN=${BOT_TOKEN}
@@ -21,7 +21,7 @@ ENV PROXY_PASSWORD=${PROXY_PASSWORD}
 ARG USER_LIST
 ENV USER_LIST=${USER_LIST}
 
-EXPOSE 23456
+EXPOSE 8000
 
 WORKDIR /app
 ADD . /app
